@@ -1,0 +1,42 @@
+<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shadow -->
+  <ellipse cx="75" cy="135" rx="45" ry="8" fill="#000" opacity="0.1"/>
+  
+  <!-- Feet -->
+  <path d="M60 120 L50 125 L55 128 L60 125 L65 128 L70 125 L60 120Z" fill="#FF8800"/>
+  <path d="M90 120 L80 125 L85 128 L90 125 L95 128 L100 125 L90 120Z" fill="#FF8800"/>
+  
+  <!-- Body -->
+  <ellipse cx="75" cy="85" rx="40" ry="35" fill="#FFD93D"/>
+  <ellipse cx="75" cy="85" rx="35" ry="30" fill="#FFE66D"/>
+  
+  <!-- Body detail -->
+  <ellipse cx="75" cy="100" rx="25" ry="15" fill="#FFC93D" opacity="0.5"/>
+  
+  <!-- Wing -->
+  <ellipse cx="100" cy="90" rx="15" ry="28" fill="#FFD93D" transform="rotate(25 100 90)"/>
+  <ellipse cx="100" cy="90" rx="12" ry="24" fill="#FFDD5C" transform="rotate(25 100 90)"/>
+  
+  <!-- Head -->
+  <circle cx="65" cy="55" r="25" fill="#FFD93D"/>
+  <circle cx="65" cy="55" r="22" fill="#FFE66D"/>
+  
+  <!-- Beak -->
+  <ellipse cx="45" cy="58" rx="15" ry="10" fill="#FF6B35"/>
+  <ellipse cx="42" cy="58" rx="12" ry="8" fill="#FF8552"/>
+  <line x1="42" y1="58" x2="52" y2="58" stroke="#CC4422" stroke-width="1"/>
+  
+  <!-- Eye -->
+  <circle cx="70" cy="50" r="5" fill="#000"/>
+  <circle cx="71" cy="49" r="2" fill="#FFF"/>
+  
+  <!-- Eyebrow (для мема) -->
+  <path d="M64 44 Q70 42 76 44" stroke="#000" stroke-width="2" stroke-linecap="round" fill="none"/>
+  
+  <!-- Tail -->
+  <path d="M110 80 Q120 75 125 80 Q120 85 110 85Z" fill="#FFD93D"/>
+  <path d="M110 82 Q118 78 123 82 Q118 86 110 86Z" fill="#FFDD5C"/>
+  
+  <!-- Money sign на животе (для мема) -->
+  <text x="75" y="95" font-family="Arial" font-size="20" font-weight="bold" fill="#4CAF50" text-anchor="middle">$</text>
+</svg>
