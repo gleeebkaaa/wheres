@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Договор оказания услуг — Разработка сайта | Gleb</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --text-muted: #666;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --font: 'Inter', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.65; padding: 24px 16px; }
+        .wrap { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 1.5rem; margin-bottom: 24px; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+        h2 { font-size: 1.15rem; margin: 20px 0 10px; }
+        p, li { margin-bottom: 8px; }
+        ul { margin-left: 20px; }
+        .tariffs { background: #f8f9fa; border-radius: 12px; padding: 20px; margin: 16px 0; }
+        .tariff { padding: 12px 0; border-bottom: 1px solid var(--border); }
+        .tariff:last-child { border-bottom: none; }
+        .tariff.selected { background: #dbeafe; margin: 0 -20px; padding: 12px 20px; border-radius: 8px; border: 1px solid var(--accent); }
+        .tariff strong { display: block; margin-bottom: 4px; }
+        .sign-block { background: #f0f9ff; border: 2px solid var(--accent); border-radius: 12px; padding: 24px; margin-top: 32px; }
+        .sign-block h2 { margin-top: 0; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; }
+        .form-group input { width: 100%; max-width: 400px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font: inherit; }
+        .checkbox-group { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+        .checkbox-group input { width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0; }
+        .btn-sign { background: var(--accent); color: white; border: none; padding: 14px 28px; font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; margin-top: 8px; }
+        .btn-sign:hover { background: #1d4ed8; }
+        .legal-note { font-size: 0.85rem; color: var(--text-muted); margin-top: 16px; }
+        .print-only { display: none; }
+        .hidden { display: none !important; }
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { font-size: 7px; line-height: 1.3; padding: 8px; }
+            .wrap { max-width: 100%; }
+            h1 { font-size: 0.8rem; margin-bottom: 6px; padding-bottom: 2px; }
+            h2 { font-size: 0.7rem; margin: 6px 0 3px; }
+            p, li { margin-bottom: 1px; font-size: 7px; }
+            .tariffs { padding: 6px; margin: 4px 0; }
+            .tariff { padding: 3px 0; }
+            .tariff.selected { padding: 4px 8px; }
+            .sign-block { padding: 8px; margin-top: 8px; }
+            .sign-block h2 { font-size: 0.7rem; }
+            .sign-block p { font-size: 7px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>Договор оказания услуг по разработке сайта</h1>
+
+        <p><strong>Дата:</strong> <span id="contractDate"></span></p>
+
+        <p><strong>Исполнитель</strong> (самозанятый): Пудовкин Глеб Дмитриевич (далее — Исполнитель). Исполнитель осуществляет деятельность в качестве самозанятого и уплачивает налог на профессиональный доход с данного дохода в соответствии с законодательством РФ.</p>
+
+        <p><strong>Заказчик</strong>: физическое или юридическое лицо, принявшее условия договора путём дистанционного подписания (далее — Заказчик).</p>
+
+        <h2>1. Предмет договора</h2>
+        <p>Исполнитель обязуется оказать услуги по разработке (в т.ч. ребрендингу) сайта в объёме выбранного тарифа, Заказчик обязуется принять результат работ и оплатить услуги в порядке и сроки, установленные договором.</p>
+
+        <h2>2. Тарифы и состав услуг</h2>
+        <p>Стоимость и состав работ определяются выбранным тарифом:</p>
+
+        <div class="tariffs">
+            <div class="tariff">
+                <strong>Starter — 10 000 ₽</strong>
+                Адаптивная вёрстка, базовое SEO, аналитика, 3 месяца технической поддержки. Без копирайтинга.
+            </div>
+            <div class="tariff selected">
+                <strong>Business — 20 000 ₽ (выбран)</strong>
+                Всё из Starter + копирайтинг, SEO-оптимизация, тестирование, 6 месяцев технической поддержки.
+            </div>
+            <div class="tariff">
+                <strong>Enterprise — 50 000 ₽</strong>
+                Всё из Business + 3 API-интеграции, глубокая оптимизация, приоритет поддержки, 12 месяцев технической поддержки.
+            </div>
+        </div>
+
+        <p>По настоящему договору выбран тариф <strong>Business — 20 000 ₽</strong>. Объём работ — ребрендинг (обновление, переработка сайта) в рамках указанного тарифа. Управление сайтом осуществляется в CMS WordPress; доступ к админ-панели WordPress передаётся Заказчику после приёмки работ.</p>
+
+        <h2>3. Порядок оплаты и выполнения</h2>
+        <ul>
+            <li><strong>3.1.</strong> Заказчик вносит <strong>50% стоимости</strong> выбранного тарифа (предоплата) на реквизиты Исполнителя до начала работ.</li>
+            <li><strong>3.2.</strong> Реквизиты для оплаты: банковская карта Т‑Банк <strong>2200 7019 0925 1867</strong> либо перевод по номеру телефона <strong>+7 977 898-60-20</strong> (Т‑Банк).</li>
+            <li><strong>3.3.</strong> После зачисления предоплаты Заказчик предоставляет Исполнителю доступы к панели управления хостингом, CMS, при необходимости — к регистратору домена, и подтверждает в письменной форме, что является правообладателем указанных учётных записей и доменного имени.</li>
+            <li><strong>3.4.</strong> Стороны подписывают договор дистанционно (раздел 8).</li>
+            <li><strong>3.5.</strong> По завершении работ стороны подписывают акт приёмки-передачи выполненных работ в порядке раздела 8. Заказчик перечисляет оставшиеся 50% стоимости в срок, указанный в акте (не более 3 рабочих дней с даты его подписания, если иное не согласовано).</li>
+        </ul>
+
+        <h2>4. Передача доступов</h2>
+        <p>Заказчик в согласованные сроки предоставляет Исполнителю:</p>
+        <ul>
+            <li>доступ к панели управления хостингом (идентификатор, пароль, URL панели);</li>
+            <li>доступ к админ-панели WordPress (URL входа, логин и пароль учётной записи администратора);</li>
+            <li>при необходимости — доступ к панели регистратора домена (настройка DNS, выпуск SSL-сертификата);</li>
+            <li>FTP/SFTP или доступ к файловому менеджеру хостинга — по согласованию сторон.</li>
+        </ul>
+        <p>Заказчик гарантирует, что указанные учётные записи и доменное имя принадлежат ему либо лицу, уполномочившему его на заключение договора. Передача учётных данных производится по каналу, согласованному сторонами. Исполнитель не отвечает за несанкционированный доступ к данным по вине Заказчика или третьих лиц.</p>
+
+        <h2>5. Поисковая оптимизация (SEO)</h2>
+        <p>Работы по SEO выполняются в объёме выбранного тарифа. Заказчик принимает к сведению:</p>
+        <ul>
+            <li>при переносе сайта, изменении структуры, домена или существенном обновлении контента поисковые системы проводят переиндексацию;</li>
+            <li>в период переиндексации возможны изменения позиций сайта в выдаче, в том числе их снижение;</li>
+            <li>указанные изменения носят технический характер и могут быть временными;</li>
+            <li>сроки стабилизации позиций определяются алгоритмами поисковых систем и не гарантируются Исполнителем.</li>
+        </ul>
+        <p>Исполнитель не несёт ответственности за изменение позиций в поисковой выдаче, вызванное действиями поисковых систем, изменением их алгоритмов или действиями третьих лиц.</p>
+
+        <h2>6. Сроки и порядок разрешения споров</h2>
+        <p>Сроки выполнения работ согласовываются сторонами дополнительно. Техническая поддержка оказывается в объёме и в срок, предусмотренные выбранным тарифом. Споры разрешаются путём переговоров; при недостижении согласия — в соответствии с законодательством Российской Федерации.</p>
+
+        <h2>7. Реквизиты Исполнителя</h2>
+        <p>Пудовкин Глеб Дмитриевич (самозанятый). Банковская карта Т‑Банк: 2200 7019 0925 1867. Перевод по номеру телефона: +7 977 898-60-20. Telegram: @Wheres_themoney_Lebowski.</p>
+
+        <h2>8. Дистанционное подписание</h2>
+        <p>Договор считается заключённым с момента проставления Заказчиком простой электронной подписи (ФИО, ИНН, дата, подтверждение согласия с условиями) в нижеследующей форме. Стороны признают равносильность простой электронной подписи собственноручной подписи при заключении настоящего договора и акта приёмки-передачи работ (ст. 160 ГК РФ, Федеральный закон от 06.04.2011 № 63‑ФЗ «Об электронной подписи»).</p>
+
+        <div class="sign-block no-print" id="signBlock">
+            <h2>Подписание договора Заказчиком</h2>
+            <div class="form-group">
+                <label for="clientSurname">Фамилия *</label>
+                <input type="text" id="clientSurname" required placeholder="Иванов">
+            </div>
+            <div class="form-group">
+                <label for="clientFirstName">Имя *</label>
+                <input type="text" id="clientFirstName" required placeholder="Иван">
+            </div>
+            <div class="form-group">
+                <label for="clientPatronymic">Отчество *</label>
+                <input type="text" id="clientPatronymic" required placeholder="Иванович">
+            </div>
+            <div class="form-group">
+                <label for="clientInn">ИНН *</label>
+                <input type="text" id="clientInn" required placeholder="12 цифр (физлицо) или 10 (юрлицо)" maxlength="12" inputmode="numeric" pattern="[0-9]{10}[0-9]{0,2}" title="10 или 12 цифр">
+            </div>
+            <div class="form-group">
+                <label for="clientDate">Дата *</label>
+                <input type="date" id="clientDate" required>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="agree" required>
+                <label for="agree">Ознакомлен(а) с условиями договора, согласен(на) с ними; подтверждаю право на передачу указанных доступов и правообладание доменным именем и учётными записями. Проставление подписи в данной форме приравниваю к собственноручной подписи по договору.</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="agreeTax" required>
+                <label for="agreeTax">Подтверждаю, что Исполнитель осуществляет деятельность в качестве плательщика НПД (самозанятый) в отношении доходов по настоящему договору.</label>
+            </div>
+            <button type="button" class="btn-sign" id="btnSign">Подписать договор</button>
+            <p class="legal-note">Простая электронная подпись при согласии сторон признаётся в соответствии с Федеральным законом от 06.04.2011 № 63‑ФЗ «Об электронной подписи» допустимой для заключения договора оказания услуг. Подписанный экземпляр подлежит сохранению сторонами.</p>
+        </div>
+
+        <div class="sign-block print-only" id="signedBlock">
+            <h2>Подпись Заказчика (простая электронная подпись)</h2>
+            <p><strong>ФИО:</strong> <span id="printName"></span></p>
+            <p><strong>ИНН:</strong> <span id="printInn"></span></p>
+            <p><strong>Дата:</strong> <span id="printDate"></span></p>
+            <p><strong>Дата и время подписания (для протокола):</strong> <span id="printTimestamp"></span></p>
+            <p>Договор подписан дистанционно. Условия раздела 8 приняты.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contractDate').textContent = new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
+        var dateInput = document.getElementById('clientDate');
+        dateInput.value = new Date().toISOString().slice(0, 10);
+
+        document.getElementById('btnSign').onclick = function() {
+            var surname = document.getElementById('clientSurname').value.trim();
+            var firstName = document.getElementById('clientFirstName').value.trim();
+            var patronymic = document.getElementById('clientPatronymic').value.trim();
+            var inn = document.getElementById('clientInn').value.trim().replace(/\s/g, '');
+            var date = document.getElementById('clientDate').value;
+            if (!surname || !firstName || !patronymic) { alert('Заполните фамилию, имя и отчество полностью.'); return; }
+            if (!inn) { alert('Укажите ИНН.'); return; }
+            if (!/^[0-9]{10}$|^[0-9]{12}$/.test(inn)) { alert('ИНН должен содержать 10 цифр (юрлицо) или 12 цифр (физлицо).'); return; }
+            if (!date) { alert('Укажите дату.'); return; }
+            if (!document.getElementById('agree').checked || !document.getElementById('agreeTax').checked) {
+                alert('Необходимо подтвердить оба пункта согласия.'); return;
+            }
+            var name = surname + ' ' + firstName + ' ' + patronymic;
+            var now = new Date();
+            document.getElementById('printName').textContent = name;
+            document.getElementById('printInn').textContent = inn;
+            document.getElementById('printDate').textContent = date ? new Date(date + 'T12:00:00').toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }) : date;
+            document.getElementById('printTimestamp').textContent = now.toLocaleString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+            document.getElementById('signBlock').classList.add('hidden');
+            document.getElementById('signedBlock').classList.remove('print-only');
+            window.print();
+        };
+    </script>
+</body>
+</html>
